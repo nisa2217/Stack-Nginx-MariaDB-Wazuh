@@ -30,3 +30,4 @@ EXPOSE 80 1514 1515 9200
 
 # Comando predeterminado (puedes cambiarlo según el servicio)
 CMD ["sh", "-c", "echo Configuración lista para $SERVICE"]
+
