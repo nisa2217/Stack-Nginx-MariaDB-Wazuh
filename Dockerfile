@@ -24,7 +24,11 @@ RUN echo "SERVICE=$SERVICE" && \
     fi
 
 # Copia configuraciones específicas del servicio
-COPY ./config/$SERVICE /etc/$SERVICE || echo "No hay configuraciones específicas para $SERVICE."
+RUN if [ -d "./config/$SERVICE" ]; then \ 
+      cp -r ./config/$SERVICE /etc/$SERVICE; \ 
+    else \ 
+      echo "No hay configuraciones específicas para $SERVICE."; \ 
+    fi
 
 # Exponer los puertos comunes
 EXPOSE 80 1514 1515 9200
