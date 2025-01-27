@@ -147,3 +147,4 @@ volumes:
 
 networks:
   wazuh_network:
+
